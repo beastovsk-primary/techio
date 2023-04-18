@@ -1,11 +1,11 @@
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
-import s from "./LandingServices.module.scss";
+import s from "./Roadmap.module.scss";
 import { Player } from "@lottiefiles/react-lottie-player";
 
-interface LandingServicesProps {
-	servicesList: {
+interface RoadmapProps {
+	roadmapList: {
 		title: string;
 		subtitle: string;
 		lottie: any;
@@ -14,15 +14,17 @@ interface LandingServicesProps {
 	}[];
 }
 
-const LandingServices: FC<LandingServicesProps> = ({ servicesList }) => {
+const Roadmap: FC<RoadmapProps> = ({ roadmapList }) => {
 	return (
-		<ul className={s.container}>
-			{servicesList.map(({ title, subtitle, lottie, link, reversed }) => (
+		<div className={s.container}>
+			<h1 className={s.title}>Как нам удается эффективно работать?</h1>
+			{roadmapList.map(({ title, subtitle, lottie, link, reversed }) => (
 				<li
 					className={reversed ? `${s.item} ${s.reverseFlex}` : s.item}
+					key={title}
 				>
 					<div className={s.info}>
-						<h1 className={s.title}>{title}</h1>
+						<h1 className={s.label}>{title}</h1>
 						<p className={s.subtitle}>{subtitle}</p>
 						{/* <Link href={link} className={s.link}>
 							What is {title}?
@@ -32,8 +34,8 @@ const LandingServices: FC<LandingServicesProps> = ({ servicesList }) => {
 					<Player src={lottie} className="player" loop autoplay />
 				</li>
 			))}
-		</ul>
+		</div>
 	);
 };
 
-export default LandingServices;
+export default Roadmap;

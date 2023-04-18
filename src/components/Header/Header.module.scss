@@ -8,10 +8,13 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	box-sizing: border-box;
 }
 
 .logo {
 	@include fluid(font-size, 28px, 36px);
+	// equal center nav menu
+	padding-right: 100px;
 
 	font-weight: 700;
 	color: $basic-black;

@@ -1,20 +1,18 @@
-import LandingBanner from "../src/components/LandingBanner/LandingBanner";
-import LandingInfo from "../src/components/LandingInfo/LandingInfo";
-import LandingLayout from "../src/components/LandingLayout/LandingLayout";
-import LandingServices from "../src/components/LandingServices/LandingServices";
-
-// import firstImage from "../src/assets/landing-image-1.svg";
-// import secondImage from "../src/assets/landing-image-2.svg";
-// import thirdImage from "../src/assets/landing-image-3.svg";
+import LandingLayout from "../src/components/Layout/Layout";
 
 import meeting from "../src/assets/lottie/meeting.json";
 import developing from "../src/assets/lottie/developing.json";
 import result from "../src/assets/lottie/result.json";
 
+import Roadmap from "../src/components/Roadmap/Roadmap";
+import Info from "../src/components/Info/Info";
+import Banner from "../src/components/Banner/Banner";
+import TechnologiesList from "../src/components/TechnologiesList/TechnologiesList";
+
 export default function Home() {
-	const servicesList = [
+	const roadmapList = [
 		{
-			title: "Митинг",
+			title: "Планирование",
 			subtitle: "Определение потребности, цели и тематики сайта",
 			lottie: meeting,
 			link: "",
@@ -23,7 +21,7 @@ export default function Home() {
 		{
 			title: "Разработка",
 			subtitle:
-				"Пишем код для вашего будущего продукта на современных технологиях для быстрого взаимодействия сайта с клиентом",
+				"Пишем код для вашего продукта на современных технологиях для быстрого взаимодействия клиента с сайтом",
 			lottie: developing,
 			link: "",
 			reversed: true,
@@ -39,9 +37,10 @@ export default function Home() {
 	];
 	return (
 		<LandingLayout>
-			<LandingBanner />
-			<LandingInfo />
-			<LandingServices servicesList={servicesList} />
+			<Banner />
+			<Info />
+			<Roadmap roadmapList={roadmapList} />
+			<TechnologiesList />
 		</LandingLayout>
 	);
 }
